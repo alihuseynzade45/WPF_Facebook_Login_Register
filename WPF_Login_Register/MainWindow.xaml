@@ -1,0 +1,123 @@
+﻿<Window x:Class="WPF_Login_Register.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Login_Register"
+        mc:Ignorable="d"
+         Title="MainWindow" Height="483" Width="1006" Background="#FFF0F2F5">
+
+
+
+    <Window.Resources>
+
+        <Style x:Key="PlaceholderTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="2">
+                                <ScrollViewer x:Name="PART_ContentHost" />
+                            </Border>
+                            <TextBlock x:Name="placeholderText"
+                               Text="{TemplateBinding Tag}"
+                               FontSize="16"
+                               Foreground="#9299a2"
+                               IsHitTestVisible="False"
+                               Margin="5,0,0,0"
+                               Visibility="Collapsed" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Text" Value="">
+                                <Setter TargetName="placeholderText" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="placeholderText" Property="Visibility" Value="Collapsed" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </Window.Resources>
+
+
+
+
+    <Grid Margin="10,0,0,0">
+
+        <Border Margin="460,97,230,43" Width="300"  BorderThickness="2" CornerRadius="7" Background="White">
+            <Grid Background="Transparent" Margin="-2,0,2,-2">
+
+               
+
+
+
+
+                <TextBox FontSize="25" Height="40" Width="270" Margin="13,24,13,238" BorderBrush="LightGray" Style="{StaticResource PlaceholderTextBox}" Tag="E-posta ve ya Telefon Numarası" >
+
+                </TextBox>
+
+                <PasswordBox PreviewMouseDown="textBox_PreviewMouseDown" x:Name="paswordBox" FontSize="18" Margin="13,77,13,185" Height="40" Width="270" BorderBrush="LightGray" HorizontalAlignment="Center">
+                    
+                </PasswordBox>
+
+
+                <Label x:Name="SifreLabel" Margin="0,0,210,120" Content="Şifre" FontSize="18" Height="40" Width="60" Foreground="#9299a2"></Label>
+
+
+                <Button Content="Giriş Yap" FontSize="23" Foreground="White"  Height="40" Width="270" Margin="13,131,13,131"  BorderThickness="0"  Background="#FF1877F2" >
+
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="4"/>
+                        </Style>
+                    </Button.Resources>
+
+                </Button>
+
+                <Label Content="Şifreni mi Unuttun?" Margin="91,180,91,92" Foreground="#FF1877F2" >
+
+                </Label>
+
+                <Border Margin="1,120,0,0" BorderBrush="LightGray" BorderThickness="1" Width="265" Height="1"/>
+
+                <Button  Content="Yeni hesap oluştur" Margin="65,247,65,14" FontSize="17" BorderThickness="0" Foreground="white" Background="#FF3BAC24" Click="NewWindow_Click" >
+
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="4"/>
+                        </Style>
+                    </Button.Resources>
+
+                </Button>
+
+
+            </Grid>
+
+        </Border>
+
+
+        <Label Margin="102,157,555,239" Content="Facebook" FontSize="40" FontFamily="courier" FontWeight="bold" Foreground="#FF1877F2" >
+
+        </Label>
+
+        <Label Content="Facebook tanıdıklarınla iletişim kurmanı&#xA;ve hayatında olup bitenleri paylaşmanı&#xA;sağlar" Margin="102,205,424,140" FontSize="18" FontWeight="Medium">
+
+        </Label>
+
+
+    </Grid>
+
+
+</Window>
+
+
+
+

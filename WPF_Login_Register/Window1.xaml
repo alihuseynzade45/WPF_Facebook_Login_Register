@@ -1,0 +1,308 @@
+﻿<Window x:Class="WPF_Login_Register.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Login_Register"
+        mc:Ignorable="d"
+         Title="Window1" Height="657" Width="521">
+    <Window.Resources>
+
+        <Style x:Key="PlaceholderTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="2">
+                                <ScrollViewer x:Name="PART_ContentHost" />
+                            </Border>
+                            <TextBlock x:Name="placeholderText"
+                               Text="{TemplateBinding Tag}"
+                               FontSize="20"
+                               Foreground="#9299a2"
+                               IsHitTestVisible="False"
+                               Margin="5,0,0,0"
+                               Visibility="Collapsed" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Text" Value="">
+                                <Setter TargetName="placeholderText" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="placeholderText" Property="Visibility" Value="Collapsed" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </Window.Resources>
+
+
+
+
+
+
+    <Grid>
+        <Border>
+            <Grid>
+
+                <Label Content="Kaydol" Margin="10,0,282,522" FontSize="40" FontWeight="DemiBold"></Label>
+                <Label Content="Hızlı ve kolaydır." Margin="10,54,338,490" FontSize="18"></Label>
+
+                <Border Height="1" BorderBrush="LightGray" BorderThickness="2" Margin="0,96,0,516"/>
+
+                <TextBox FontSize="25" Margin="20,128,252,445" Background="#FFF5F6F7" BorderBrush="LightGray" Style="{StaticResource PlaceholderTextBox}" Tag="Ad"></TextBox>
+                <TextBox FontSize="25" Margin="272,128,20,445" Background="#FFF5F6F7" BorderBrush="LightGray" Style="{StaticResource PlaceholderTextBox}" Tag="Soyadın"></TextBox>
+                <TextBox FontSize="25" Margin="20,184,20,389" Background="#FFF5F6F7"  BorderBrush="LightGray" Style="{StaticResource PlaceholderTextBox}" Tag="Cep telefonu numarsı ve ya e-posta"></TextBox>
+
+                <PasswordBox FontSize="18" Margin="20,241,20,332"  Background="#FFF5F6F7" BorderBrush="LightGray"  PreviewMouseDown="textBox_PreviewMouseDown"  ></PasswordBox>
+
+                <Label x:Name="sifreLabel" Content="Şifre" FontSize="22"  Foreground="#9299a2" Margin="22,241,375,320"></Label>
+
+                <Label Content="Doğum Tarihi" Margin="20,310,378,273" FontSize="15"></Label>
+
+                <ListBox x:Name="gun" Margin="20,337,331,240">
+
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Padding" Value="2" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                        <Border Name="border" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="0"  >
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <ContentPresenter Grid.ColumnSpan="2" Margin="0,0,-2,0" />
+                                                <ComboBox x:Name="ComboGun" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Margin="124,3,0,3" Width="19"  BorderBrush="Transparent" >
+                                                    <ComboBoxItem Content="1"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2"></ComboBoxItem>
+                                                    <ComboBoxItem Content="3"></ComboBoxItem>
+                                                    <ComboBoxItem Content="4"></ComboBoxItem>
+                                                    <ComboBoxItem Content="6"></ComboBoxItem>
+                                                    <ComboBoxItem Content="7"></ComboBoxItem>
+                                                    <ComboBoxItem Content="8"></ComboBoxItem>
+                                                    <ComboBoxItem Content="9"></ComboBoxItem>
+                                                    <ComboBoxItem Content="10"></ComboBoxItem>
+                                                    <ComboBoxItem Content="11"></ComboBoxItem>
+                                                    <ComboBoxItem Content="12"></ComboBoxItem>
+                                                    <ComboBoxItem Content="13"></ComboBoxItem>
+                                                    <ComboBoxItem Content="14"></ComboBoxItem>
+                                                    <ComboBoxItem Content="15"></ComboBoxItem>
+                                                    <ComboBoxItem Content="16"></ComboBoxItem>
+                                                    <ComboBoxItem Content="17"></ComboBoxItem>
+                                                    <ComboBoxItem Content="18"></ComboBoxItem>
+                                                    <ComboBoxItem Content="19"></ComboBoxItem>
+                                                    <ComboBoxItem Content="20"></ComboBoxItem>
+                                                    <ComboBoxItem Content="21"></ComboBoxItem>
+                                                    <ComboBoxItem Content="22"></ComboBoxItem>
+                                                    <ComboBoxItem Content="23"></ComboBoxItem>
+                                                    <ComboBoxItem Content="24"></ComboBoxItem>
+                                                    <ComboBoxItem Content="25"></ComboBoxItem>
+                                                    <ComboBoxItem Content="26"></ComboBoxItem>
+                                                    <ComboBoxItem Content="27"></ComboBoxItem>
+                                                    <ComboBoxItem Content="28"></ComboBoxItem>
+                                                    <ComboBoxItem Content="29"></ComboBoxItem>
+                                                    <ComboBoxItem Content="30"></ComboBoxItem>
+                                                    <ComboBoxItem Content="31"></ComboBoxItem>
+
+                                                </ComboBox>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+
+                    <ListBoxItem FontSize="15" Content="Gün" Height="32" Width="148" >
+                    </ListBoxItem>
+
+                </ListBox>
+
+
+
+
+                <ListBox x:Name="ay" Margin="190,337,160,240">
+
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Padding" Value="2" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                        <Border Name="border" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="0">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <ContentPresenter Grid.ColumnSpan="2" Margin="0,0,-2,0" />
+                                                <ComboBox x:Name="ComboAy" HorizontalAlignment="Left" Margin="124,3,0,3" Width="19" SelectionChanged="ComboBox_SelectionChanged" >
+                                                    <ComboBoxItem Content="Oca"></ComboBoxItem>
+                                                    <ComboBoxItem Content="Şub"></ComboBoxItem>
+                                                    <ComboBoxItem Content="Mar"></ComboBoxItem>
+                                                    <ComboBoxItem Content="Nis"></ComboBoxItem>
+                                                    <ComboBoxItem Content="May"></ComboBoxItem>
+                                                    <ComboBoxItem Content="Haz"></ComboBoxItem>
+                                                    <ComboBoxItem Content="Tem"></ComboBoxItem>
+                                                    <ComboBoxItem Content="Ağu"></ComboBoxItem>
+                                                    <ComboBoxItem Content="Eyl"></ComboBoxItem>
+                                                    <ComboBoxItem Content="Eki"></ComboBoxItem>
+                                                    <ComboBoxItem Content="Kas"></ComboBoxItem>
+                                                    <ComboBoxItem Content="Ara"></ComboBoxItem>
+                                                </ComboBox>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+
+                    <ListBoxItem FontSize="15" Content="Ay" Height="34" Width="148" >
+                    </ListBoxItem>
+
+                </ListBox>
+
+
+
+
+
+                <ListBox x:Name="il" Margin="361,337,20,240">
+
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Padding" Value="2" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                        <Border Name="border" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="0">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <ContentPresenter Grid.ColumnSpan="2" Margin="0,0,-2,0" />
+                                                <ComboBox x:Name="ComboIl" HorizontalAlignment="Left" Margin="94,3,0,3" Width="19" SelectionChanged="ComboBox_SelectionChanged" >
+                                                    <ComboBoxItem Content="2023"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2022"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2021"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2020"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2019"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2018"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2017"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2016"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2015"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2014"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2013"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2012"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2011"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2010"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2009"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2008"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2007"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2006"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2005"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2004"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2003"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2002"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2001"></ComboBoxItem>
+                                                    <ComboBoxItem Content="2000"></ComboBoxItem>
+
+                                                </ComboBox>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+
+                    <ListBoxItem FontSize="15" Content="İl" Height="34" Width="117" >
+                    </ListBoxItem>
+
+                </ListBox>
+
+
+                <Label Content="Cinsiyet" Margin="22,386,424,200"></Label>
+
+                <ListBox Margin="20,408,331,169">
+
+                    <ListBoxItem FontSize="15"  Height="34" Width="146" >
+                        <StackPanel Orientation="Horizontal" Width="136">
+                            <Label Content="Kadın" Margin="0"></Label>
+                            <RadioButton Margin="70,10,0,0"  ></RadioButton>
+                        </StackPanel>
+                    </ListBoxItem>
+
+                </ListBox>
+
+
+
+
+                <ListBox Margin="190,408,160,169">
+
+                    <ListBoxItem FontSize="15"  Height="34" Width="146" >
+                        <StackPanel Orientation="Horizontal" Width="136">
+                            <Label Content="Erkek" Margin="0"></Label>
+                            <RadioButton Margin="70,10,0,0" ></RadioButton>
+                        </StackPanel>
+                    </ListBoxItem>
+
+                </ListBox>
+
+
+                <ListBox Margin="361,408,20,169">
+
+                    <ListBoxItem FontSize="15"  Height="34" Width="118" >
+                        <StackPanel Orientation="Horizontal" Width="114">
+                            <Label Content="Özel" Margin="0" Width="38" ></Label>
+                            <RadioButton Margin="50,10,0,0" Width="14"  ></RadioButton>
+                        </StackPanel>
+                    </ListBoxItem>
+
+                </ListBox>
+
+
+
+            </Grid>
+        </Border>
+
+
+        <Label Content="Hizmetimizi kullanan kişiler senin iletişim bilgilerini Facebook'a yüklemiş olabilir.&#xD;&#xA;&#xD;&#xA;Kaydol düğmesine tıklayarak, Koşullarımızı, Gizlilik İlkemizi ve Çerezler İlkemizi&#xD;&#xA;kabul etmiş olursun. Bizden SMS Bildirimleri alabilir ve bu bildirimleri istediğin&#xD;&#xA;zaman durdurabilirsin." Margin="18,468,51,57">
+
+        </Label>
+
+
+
+
+        <Button Content="kaydol" FontSize="23" Foreground="White" Margin="140,564,141,14"  BorderThickness="0"  Background="#FF3BAC24" >
+
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="4"/>
+                </Style>
+            </Button.Resources>
+
+        </Button>
+
+
+
+    </Grid>
+</Window>
